@@ -1,0 +1,84 @@
+import java.util.Scanner;
+ 
+public class Matrix {
+        public static void main(String[] args){
+            Scanner sc = new Scanner(System.in);
+            String choice;
+//do
+            do {
+                System.out.println("Input 9 Elements:");
+ 
+            //1d inputs from 1-9
+            int[] inputs = new int[9];
+            for(int x=0; x<inputs.length; x++)
+            inputs[x] = sc.nextInt();
+ 
+            //2d
+            int[][] NGO = new int[3][3];
+            int index = 0;
+            for (int row=0; row<3; row++) {
+                for (int col=0; col<3; col++) {
+                NGO[row][col] = inputs[index];
+                index++;
+                }
+            }
+ 
+//calculatorsum
+//row
+                int[] rowSum = new int[3];
+                for(int r = 0; r < 3; r++){
+                    rowSum[r] = 0;
+                    for(int c = 0; c < 3; c++){
+                        rowSum[r] += NGO[r][c];
+                    }
+                }                
+//col
+                int[] colSum = new int[3];
+                for(int r = 0; r < 3; r++){
+                    colSum[r] = 0;
+                    for(int c = 0; c < 3; c++){
+                        colSum[c] += NGO[r][c];
+                    }
+                }
+//Diagonals
+                int[] DiaSum = new int[3];
+                for(int r = 0; r < 3; r++){
+                    DiaSum[r] = 0;
+                    for(int c = 0; c < 3; c++){
+                        colSum[c] += NGO[r][c];
+                    }
+                }
+                int D1 = NGO[0][0] + NGO[1][1] + NGO[2][2];
+                int D2 = NGO[0][2] + NGO[1][1] + NGO[2][0];
+ 
+ 
+                System.out.println("Display Here are the Numbers and the required outputs: ");
+                System.out.println("====================================================================");
+                System.out.println("                                                           Row Sum");
+             for(int row=0;row<NGO.length;row++){
+                    for(int col=0;col<NGO[row].length;col++){
+                        System.out.print("              " + NGO[row][col]);
+                        }
+                        System.out.println("              " + rowSum[row]);
+                }
+ 
+                System.out.print("\nColumn Sum:   ");
+                for(int count=0;count<3;count++){
+                System.out.print(colSum[count] + "             ");
+                }
+                System.out.println("\n=====================================================================");
+                System.out.println("Diagonal Sum 1: "+D1);
+                System.out.println("Diagonal Sum 2: "+D2);
+ 
+ 
+//retry
+                System.out.print("\n\nTry Again [y|n]: ");
+                choice = sc.next();
+            }
+            while (!choice.equals("n"));
+            sc.close();
+        }
+ 
+}
+ 
+ 
