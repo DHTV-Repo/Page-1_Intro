@@ -1,0 +1,54 @@
+import java.util.Scanner;
+ 
+public class V3matrix {
+        public static void main(String[] args){
+            Scanner sc = new Scanner(System.in);
+
+            //3d [section][students][subs]
+
+            /*
+Notes:
+- Groups are sections , which there are 2 off:  NU[0][][]; NU[1][][]
+- Sections have 3 students, and are the FIRST COLUMNS: 
+NU[0][0][0], NU[0][1][0];
+NU[1][0][0], NU[1][1][0];
+- Column 2 are the subs/grades:
+NU[0][0][1], NU[0][1][1];
+NU[1][0][1], NU[1][1][1];
+- Column 2 are also the only inputted values.
+
+ayayaya... T^T
+            */
+
+            int V3[][][]=
+            {
+                {{1, 20}, {2, 40}},
+                {{1, 60}, {2, 80}}
+            };
+
+            //int subjava = sc.nextInt();
+            //int subdata = sc.nextInt();
+            //int subnet = sc.nextInt();
+            //int stuav = subjava+subdata+subnet;
+            //int secav[int count=0; students<2; count++]
+            System.out.println("Input 9 Elements:");
+ 
+            //1d inputs from 1-9
+            int[] inputs = new int[3];
+            for(int x=0; x<inputs.length; x++)
+            inputs[x] = sc.nextInt();
+ 
+            //2d
+            int[][] NGO = new int[3][3];
+            int index = 0;
+            for (int row=0; row<3; row++) {
+                for (int col=0; col<3; col++) {
+                NGO[row][col] = inputs[index];
+                index++;
+                }
+            }
+ 
+ 
+}
+ 
+ 
