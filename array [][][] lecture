@@ -1,0 +1,38 @@
+public class App {
+        public static void main(String[] args){
+ 
+ 
+            System.out.println("\nuwu\n");
+ 
+            //1. declare
+            int counter=1;
+           
+            //3d
+            int V3[][][]=
+            {
+                {{10, 20},
+                {30, 40}},
+                {{50, 60},
+                {70, 80}}
+            };
+ 
+            // 2. iterate
+ 
+            for(int layer=0;layer<V3.length;layer++){
+                System.out.println("3D Layers ["+counter+"]:");
+                for(int row=0;row<V3[layer].length;row++){
+                    for(int col=0;col<V3[layer][row].length;col++){
+                    System.out.print(" " + V3[layer][row][col] );
+ 
+ 
+                    }
+                     System.out.println("");
+                }
+                counter++;
+                System.out.println("");
+            }
+        }
+}
+ 
+ 
+ 
